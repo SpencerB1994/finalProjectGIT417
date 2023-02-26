@@ -26,7 +26,7 @@
                     <h1>Main Navigation</h1>
                     <ul>
                         <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#">Grub</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -35,7 +35,7 @@
 
         <img src="images/header-image-golden-eye-version.jpg" alt="Main page image with a snarling wolf and a beer with the background being a night city scape of Jackson Mississippi." class="headerImage">
 
-        <section>
+        <section id="about">
             <h2 class="tagline">Get ready to have a wild night out!</h2>
         </section>
 
@@ -77,7 +77,7 @@
                 <p><span>Vampires are NOT welcome. <br>Go find True Blood bottles somewhere else.</span></p>
             </section>
 
-            <section>
+            <section class="owner">
                 <h2>Meet the Owner</h2>
                 <h3>Hollis</h3>
                 <img src="images/Vincent_M._Ward.jpg" alt="Actor Vincent M. Ward as 'Hollis' for this websites purposes.">
@@ -85,14 +85,56 @@
             </section>
         </main>
 
-        <form target="_blank" method="POST">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName">
-        </form>
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>Whether you have questions as a customer or if you're looking to sell liquer, you can contact us anytime and we'll get back to you within 24-48 hours.</p>
+
+            <form target="_blank" method="POST">
+                <label for="fullName">Full Name<span>*</span></label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone">
+
+                <label for="email">Email Address</label>
+                <input type="text" id="email" name="email">
+
+                <fieldset>
+                    <legend>Preferred Method of Contact</legend>
+                    <input type="radio" id="selectedPhone" name="prefferedMethod" required>
+                    <label for="selectedPhone">Phone</label>
+
+                    <input type="radio" id="selectedEmail" name="prefferedMethod" required>
+                    <label for="selectedEmail">Email</label>
+                </fieldset>
+
+                <label for="comments">Comments<span>*</span></label>
+                <input type="text" id="comments" required>
+
+                <input type="submit" id="submit" value="Submit">
+            </form>
+        </section>
 
         <footer>
             <small>Copyright &copy; 2023 - Lou Pine's Beer</small>
             <p>This site is for entertainment and educational purposes only.</p>
+
+            <section class="address">
+                <h4>Address</h4>
+                <p>
+                    1234 Lupine Way<br>
+                    Jackson, MI 39201
+                </p>
+            </section>
+
+            <section class="hours">
+                <h4>Hours</h4>
+                <p>
+                    Monday - Friday: 6pm-2am<br>
+                    Saturday: 5pm-3am<br>
+                    Sunday: CLOSED
+                </p>
+            </section>
         </footer>
     </body>
 </html>
