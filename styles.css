@@ -499,6 +499,26 @@ input[type="submit"]:hover {
     border: none;
 }
 
+/* Styling for Errors on form */
+.hide {
+	display: none;
+}
+
+#errorList {
+   color: red;
+}
+
+input.error  {
+   border: 2px solid red;
+}
+
+input[type=text], input[type=email] {
+   padding: 8px;   
+   border: 1px solid #aaa;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
 /* Footer */
 footer {
     padding-right: 25px;
