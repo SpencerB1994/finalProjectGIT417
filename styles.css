@@ -501,7 +501,11 @@ input[type="submit"]:hover {
 }
 
 #errorList {
-   color: red;
+    color: red;
+}
+
+#emailError {
+    color: red;
 }
 
 input.error  {

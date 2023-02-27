@@ -1,3 +1,5 @@
+"use strict";
+
 // verify form
 let form = document.getElementById("fullForm");
 
@@ -8,8 +10,12 @@ function isFormValid(event) {
   const name = document.querySelector("#fullName");
   const phone = document.querySelector("#phone");
   const email = document.querySelector("#email");
-  const radio = document.querySelector("prefferedMethod");
-  const phoneRegex = ^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+  // const emailError = document.getElementById('errorMsg').innerHTML = "Invalid or missing email address.";
+  // const phoneError = document.getElementById("#phoneError").innerHTML = "Invalid or missing phone number."
+  // const radio = document.getElementsByName("radio");
+  // const radio1 = document.getElementById("#selectedPhone");
+  // const radio2 = document.getElementById("#selectedEmail");
+  const phoneRegex = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
   const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
   const comments = document.querySelector("#comments");
  
@@ -21,6 +27,9 @@ function isFormValid(event) {
   email.classList.remove("error");
   phone.classList.remove("error");
   comments.classList.remove("error");
+  
+  // preventing default
+  // event.preventDefault();
   
   // check to see if name matches the nameRegex
   if (!name.value.match(nameRegex)) {
@@ -35,19 +44,31 @@ function isFormValid(event) {
   }
 
   // check to confirm there's an email match the regexEmail
-  if (!email.value.match(regexEmail)) {
+  if (!email.value.match(regexEmail) || email.value === "") {
     errors.push("Missing email address.");
     email.classList.add("error");
   }
   
+  // HAVING ISSUES
   // check if one of the radio buttons were selected
-  if (!radio === null) {
-    errors.push("Please select a preferred method of contact.");
-    radio.classList.add("error");
-  }
-  
+  // if (!radio.checked) {
+    // errors.push("Please select a preferred method of contact.");
+    // radio.classList.add("error");
+  // }
+
+  // check if one of the radio buttons were selected
+    // if (button1.checked) {
+        // alert("radio1 selected");
+    // } else if (button2.checked) {
+        // alert("radio2 selected");
+    // } else if (!radio1.checked || !radio2.checked){
+        // errors.push("Please select a preferred method of contact.");
+        // radio1.classList.add("error");
+        // radio2.classList.add("error");
+    // }
+
   // checking to see if there is anything in the comments box
-  if (!comments.length === 0) {
+  if (comments.value === "") {
     errors.push("Please leave a comment.");
     comments.classList.add("error");
   }
