@@ -22,9 +22,6 @@ function isFormValid(event) {
   phone.classList.remove("error");
   comments.classList.remove("error");
   
-  // preventing default
-  event.preventDefault();
-  
   // check to see if name matches the nameRegex
   if (!name.value.match(nameRegex)) {
     errors.push("Please provide your full name.");
