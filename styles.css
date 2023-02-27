@@ -34,10 +34,35 @@ header {
     z-index: 1;
 }
 
+/* Skip Content Button */
 body {
     background-color: black;
     color: white;
     margin: 0 auto;
+}
+
+body #skipContent {
+    position: absolute;
+    left: -1000px;
+    color: white;
+    background-color: var(--dark-mint);
+    padding: 10px 10px 30px 10px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: 50px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+body #skipContent:hover {
+    background-color: var(--mint);
+    filter: drop-shadow(3px 0px 10px rgb(90, 248, 227));
+}
+
+body #skipContent:focus {
+    position: relative;
+    left: 0px;
 }
 
 h1 {
@@ -69,29 +94,25 @@ p {
 /* Navigation */
 nav ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
     padding-top: 40px;
     padding-left: 0px;
 }
 
 nav ul li {
     list-style-type: none;
-    font-size: 25px;
-    display: inline-block;
-    grid-column: 2 / 3;
-    align-content: center;
-    margin-right: 20px;
-    margin-left: 20px;
+    font-size: 20px;
 }
 
 nav ul li a {
     background-color: var(--dark-mint);
+    font-family: var(--heading-font);
     border-radius: 50px;
     text-decoration: none;
     text-transform: uppercase;
     padding: 20px 40px;
     color: white;
+    margin: 0 auto;
 }
 
 nav ul li a:hover {
@@ -172,6 +193,7 @@ main section img, main section section img {
     padding: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 100px;
 }
 
 .grub h2 {
@@ -226,7 +248,7 @@ main section img, main section section img {
     grid-column: 2 / 3;
     grid-row: 3 / 3;
     background-color: var(--dark-mint);
-    margin-top: 40px;
+    margin-top: 35px;
     margin-left: auto;
     margin-right: auto;
     font-family: var(--heading-font);
