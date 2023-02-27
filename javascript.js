@@ -1,93 +1,99 @@
 "use strict";
 
 // verify form
-let form = document.getElementById("fullForm");
+const form = document.getElementById("fullForm");
 
-function isFormValid(event) {
-  
-  const nameRegex = /[A-Za-z]\s[A-Za-z]/i;
-  const errorList = document.getElementById("errorList");
-  const name = document.querySelector("#fullName");
-  const phone = document.querySelector("#phone");
-  const email = document.querySelector("#email");
-  // const emailError = document.getElementById('errorMsg').innerHTML = "Invalid or missing email address.";
-  // const phoneError = document.getElementById("#phoneError").innerHTML = "Invalid or missing phone number."
-  // const radio = document.getElementsByName("radio");
-  // const radio1 = document.getElementById("#selectedPhone");
-  // const radio2 = document.getElementById("#selectedEmail");
-  const phoneRegex = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
-  const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
-  const comments = document.querySelector("#comments");
+// form inputs
+const fullNameInput = document.getElementById("fullName");
+const phoneInput = document.getElementById("phone");
+const emailInput = document.getElementById("email");
+const preferredMethodInputs = document.getElementsByName("preferredMethod");
+const commentsInput = document.getElementById("comments");
+
+// error container
+const errorContainer = document.getElementById("errorContainer");
+
+// regex patterns
+const nameRegex = /[A-Za-z]\s[A-Za-z]/i;
+const phoneRegex = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
+
+// function to validate the form
+function validateForm(event) {
  
-  // creating a list of errors
+  // clear any previous errors
+  errorContainer = "";
+  fullNameInput.classList.remove("error");
+  phoneInput.classList.remove("error");
+  emailInput.classList.remove("error");
+  preferredMethodInputs[0].classList.remove("error");
+  preferredMethodInputs[1].classList.remove("error");
+  commentsInput.classList.remove("error");
+
+  // initialize errors array
   let errors = [];
   
-  errorList.classList.add("hide");
-  name.classList.remove("error");
-  email.classList.remove("error");
-  phone.classList.remove("error");
-  comments.classList.remove("error");
-  
-  // preventing default
-  // event.preventDefault();
-  
   // check to see if name matches the nameRegex
-  if (!name.value.match(nameRegex)) {
+  if (!fullNameInput.value.match(nameRegex)) {
     errors.push("Please provide your full name.");
-    name.classList.add("error");
+    fullNameInput.classList.add("error");
   }
   
   // check to see if phone matches phoneRegex
-  if (!phone.value.match(phoneRegex)) {
-    errors.push("Missing phone number.");
-    phone.classList.add("error");
+  if (phoneInput.value && !phoneInput.value.match(phoneRegex)) {
+    errors.push("Invalid phone number.");
+    phoneInput.classList.add("error");
   }
 
   // check to confirm there's an email match the regexEmail
-  if (!email.value.match(regexEmail) || email.value === "") {
-    errors.push("Missing email address.");
-    email.classList.add("error");
+  if (!emailInput.value.match(regexEmail) || emailInput.value === "") {
+    errors.push("Invalid email address.");
+    emailInput.classList.add("error");
   }
   
-  // HAVING ISSUES
-  // check if one of the radio buttons were selected
-  // if (!radio.checked) {
-    // errors.push("Please select a preferred method of contact.");
-    // radio.classList.add("error");
-  // }
-
-  // check if one of the radio buttons were selected
-    // if (button1.checked) {
-        // alert("radio1 selected");
-    // } else if (button2.checked) {
-        // alert("radio2 selected");
-    // } else if (!radio1.checked || !radio2.checked){
-        // errors.push("Please select a preferred method of contact.");
-        // radio1.classList.add("error");
-        // radio2.classList.add("error");
-    // }
+  // checking to see if preferred contact method was selected
+  let isMethodSelected = false;
+  for (let i = 0; i < preferredMethodInputs.length; i++) {
+    if (preferredMethodInputs[i].checked) {
+        isMethodSelected = true;
+        break;
+    }
+  }
+  if (!isMethodSelected) {
+    errors.push("Please select a preferred method of contact.");
+    preferredMethodInputs[0].classList.add("error");
+    preferredMethodInputs[1].classList.add("error");
+  }
 
   // checking to see if there is anything in the comments box
-  if (comments.value === "") {
+  if (commentsInput.value === "") {
     errors.push("Please leave a comment.");
-    comments.classList.add("error");
+    commentsInput.classList.add("error");
   }
   
-  // check the amount of errors, if errors, then add them to a list
+  // check the amount of errors, if there are errors, display them in the error container
   if (errors.length > 0) {
-    const errorList = document.querySelector("#errorList");
-    errorList.classList.remove("hide");
-
-    // errorList.innerHTML = "";
+    event.preventDefault();
     errors.forEach((error) => {
-      const li = document.createElement("li");
-      li.innerHTML = error;
-      errorList.appendChild(li);
+      const errorElement = document.createElement("p");
+      errorElement.innerHTML = error;
+      errorContainer.appendChild(errorElement);
     });
   }
 }
 
-document.getElementById("submit").addEventListener("click", function(event) {
-    isFormValid();
-    event.preventDefault();
+// event listener for form
+form.addEventListener("submit", validateForm);
+
+// reset form
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", () => {
+    form.reset();
+    errorContainer.innerHTML = "";
+    fullNameInput.classList.remove("error");
+    phoneInput.classList.remove("error");
+    emailInput.classList.remove("error");
+    preferredMethodInputs[0].classList.remove("error");
+    preferredMethodInputs[1].classList.remove("error");
+    commentsInput.classList.remove("error");
 });

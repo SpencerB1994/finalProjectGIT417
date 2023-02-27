@@ -1,8 +1,4 @@
-<!-- does NOT have to be responsive -->
 <!-- When viewing your site in the browser, no errors should be visible in the console -->
-<!-- Add the async or defer attribute to your script tag in the header to prevent errors on page load with the JS. Your JS should "use strict"; globally -->
-
-<!-- location to mention for the fake bar: Jackson, Mississippi -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,27 +84,31 @@
             <h2>Contact Us</h2>
             <p>Whether you have questions as a customer or if you're looking to sell liquer, you can contact us anytime and we'll get back to you within 24-48 hours.</p>
 
-            <form id="fullForm">
+            <form id="fullForm" method="POST">
                 <label for="fullName">Full Name<span>*</span></label>
                 <input type="text" id="fullName" name="fullName" required>
+                <div id="fullNameError" class="error"></div>
 
                 <label for="phone">Phone Number</label>
                 <input type="text" id="phone" name="phone">
+                <div id="phoneError" class="error"></div>
 
                 <label for="email">Email Address</label>
                 <input type="text" id="email" name="email">
+                <div id="emailError" class="error"></div>
 
                 <fieldset>
                     <legend>Preferred Method of Contact</legend>
-                    <input type="radio" id="selectedPhone" name="prefferedMethod" required>
+                    <input type="radio" id="selectedPhone" name="preferredMethod" required>
                     <label for="selectedPhone">Phone</label>
 
-                    <input type="radio" id="selectedEmail" name="prefferedMethod" required>
+                    <input type="radio" id="selectedEmail" name="preferredMethod" required>
                     <label for="selectedEmail">Email</label>
                 </fieldset>
 
                 <label for="comments">Comments<span>*</span></label>
                 <input type="text" id="comments" required>
+                <div id="commentsError" class="error"></div>
 
                 <div id="errorList"></div>
 
