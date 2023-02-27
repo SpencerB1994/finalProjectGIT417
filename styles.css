@@ -43,16 +43,18 @@ body {
 
 body #skipContent {
     position: absolute;
-    left: -1000px;
     color: white;
     background-color: var(--dark-mint);
-    padding: 10px 10px 30px 10px;
+    padding: 50px 10px 30px 10px;
+    margin-left: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    margin-left: 50px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    font-family: var(--other-font);
+    transform: translateY(-100%);
+    margin-top: 0px;
 }
 
 body #skipContent:hover {
@@ -61,8 +63,8 @@ body #skipContent:hover {
 }
 
 body #skipContent:focus {
-    position: relative;
     left: 0px;
+    transform: translateY(0%);
 }
 
 h1 {
