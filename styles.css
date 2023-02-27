@@ -90,10 +90,6 @@ p {
     font-family: 'Nunito', sans-serif;
 }
 
-.headingColors h2, .headingColors h3 {
-
-}
-
 /* Navigation */
 nav ul {
     display: flex;
@@ -541,6 +537,7 @@ footer .address h4 {
     margin-top: 20px;
     margin-bottom: 0px;
     font-size: 1rem;
+    font-family: var(--other-font);
 }
 
 footer .address p {
@@ -549,6 +546,7 @@ footer .address p {
 
 footer small {
     margin-top: 35px;
+    font-family: var(--other-font);
 }
 
 footer p {
@@ -564,6 +562,7 @@ footer .hours h4 {
     margin-top: 10px;
     margin-bottom: 0px;
     font-size: 1rem;
+    font-family: var(--other-font);
 }
 
 footer .hours p {
