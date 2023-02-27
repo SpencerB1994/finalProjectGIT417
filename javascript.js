@@ -5,13 +5,14 @@ function isFormValid(event) {
   
   const nameRegex = /[A-Za-z]\s[A-Za-z]/i;
   const errorList = document.getElementById("errorList");
-  const name = fullName.value;
+  const name = document.querySelector("#fullName");
   const phone = document.querySelector("#phone");
   const email = document.querySelector("#email");
   const radio = document.querySelector("prefferedMethod");
   const phoneRegex = /([A-Za-z0-9]+(-[A-Za-z0-9]+)+)/i;
   const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
   const comments = document.querySelector("#comments");
+ 
   // creating a list of errors
   let errors = [];
   
@@ -32,13 +33,13 @@ function isFormValid(event) {
   
   // check to see if phone matches phoneRegex
   if (!phone.value.match(phoneRegex)) {
-    errors.push("Invalid or missing phone number.");
+    errors.push("Missing phone number.");
     phone.classList.add("error");
   }
 
   // check to confirm there's an email match the regexEmail
   if (!email.value.match(regexEmail)) {
-    errors.push("Invalid or missing email address.");
+    errors.push("Missing email address.");
     email.classList.add("error");
   }
   
@@ -58,7 +59,7 @@ function isFormValid(event) {
   if (errors.length > 0) {
     const errorList = document.querySelector("#errorList");
     errorList.classList.remove("hide");
-    
+
     // errorList.innerHTML = "";
     errors.forEach((error) => {
       const li = document.createElement("li");
