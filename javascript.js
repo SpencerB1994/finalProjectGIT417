@@ -119,12 +119,12 @@ function toggleMode() {
 function randomNum() {
     let randNum = Math.floor(Math.random() * 10) + 1;
     let numInput = document.getElementById("userInput");
-    let userInput = numInput.value;
+    let userInput = Number(numInput.value);
     let output = document.getElementById("message");
     
-    if (randNum === userInput.value) {
+    if (randNum === userInput) {
       output.innerHTML = "You've won a $7 discount!";
-    } else {
+    } else (randNum !== userInput) {
       output.innerHTML = "Sorry no discounts for you. Try again!";
     }
     event.preventDefault();
