@@ -572,3 +572,35 @@ footer .hours h4 {
 footer .hours p {
     margin-top: 10px;
 }
+
+/* Light/Dark Mode icon */
+#clickme, #image {
+    position: absolute;
+    right: 75px;
+    top: 30px;
+}
+
+#clickme {
+    position: absolute;
+    margin-top: -40px;
+}
+
+#image {
+    margin-top: 30px;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+    
+/* Dark Mode */
+body.dark-mode {
+    background-color: #000;    
+    color: #fff;
+}
+
+body.dark-mode .headerImage {
+
+}
