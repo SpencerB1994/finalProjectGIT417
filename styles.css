@@ -702,3 +702,8 @@ body.light-mode footer {
     background-color: #135ECF;
     color: white;
 }
+
+body.light-mode .discount #submitButton:hover {
+    filter: none;
+    background-color: #93BEFF;
+}
