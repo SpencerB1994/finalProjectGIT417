@@ -93,9 +93,6 @@ resetButton.addEventListener("click", () => {
     commentsInput.classList.remove("error");
 });
 
-// event listener for form
-form.addEventListener("submit", isFormValid);
-
 function toggleImage() {
     let img = document.getElementById("image");
     
@@ -118,3 +115,24 @@ function toggleMode() {
         body.classList.add("light-mode");
     }
 }
+
+function randomNum() {
+    let randNum = Math.floor(Math.random() * 10) + 1;
+    let numInput = document.getElementById("userInput");
+    let userInput = numInput.value;
+    let output = document.getElementById("message");
+    
+    if (randNum === userInput.value) {
+      output.innerHTML = "You've won a $7 discount!";
+    } else {
+      output.innerHTML = "Sorry no discounts for you. Try again!";
+    }
+    event.preventDefault();
+    output = "";
+  }
+
+// event listener for form
+form.addEventListener("submit", isFormValid);
+
+// event listener for random number generator
+document.getElementsByClassName("guessingGame").addEventListener("click", randomNum);

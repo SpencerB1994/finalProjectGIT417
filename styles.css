@@ -17,6 +17,7 @@
     --mint: #7CB2A2;
     --dark-mint: #699582;
     --other-font: 'Nunito', sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -131,11 +132,10 @@ header > img {
 
 .tagline {
     background-color: var(--dark-blue);
-    margin: -5px;
+    margin-top: -5px;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    z-index: 0;
 }
 
 /* Main Section */
@@ -183,6 +183,49 @@ main section img, main section section img {
 .possie img {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
+}
+
+/* Discount Section */
+.discount {
+    margin: 0 auto;
+    width: var(--width);
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.discount form {
+    display: flex;
+    flex-direction: column;
+}
+
+.discount h2 {
+    color: var(--mint);
+}
+
+.discount .guessingGame label {
+    font-family: var(--other-font);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.discount .guessingGame input {
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.guessingGame {
+    display: block;
+}
+
+.guessingGame input#submitButton {
+    margin-top: 30px;
+    width: 250px;
 }
 
 /* Grub Section - Popular Menu Items */
@@ -594,13 +637,68 @@ body.light-mode {
     background-color: #fff;
     color: #000;
 }
-    
-/* Dark Mode */
-body.dark-mode {
-    background-color: #000;    
-    color: #fff;
+
+body.light-mode .headerImage {
+    border: none;
+    filter: none;
 }
 
-body.dark-mode .headerImage {
+body.light-mode header img {
+    filter: none;
+}
 
+body.light-mode header nav ul li a {
+    filter: none;
+}
+
+body.light-mode header nav ul li a:hover {
+    background-color: #93BEFF;
+    color: white;
+}
+
+body.light-mode .tagline {
+    color: black;
+    background-color: #93BEFF;
+}
+
+body.light-mode .possie img {
+    filter: drop-shadow(3px 0px 10px rgb(0, 0, 0));
+}
+
+body.light-mode .grub {
+    background-color: #93BEFF;
+}
+
+body.light-mode .grub section img {
+    filter: drop-shadow(3px 0px 10px rgb(0, 0, 0));
+    border: 2px solid #7CB2A2;
+}
+
+body.light-mode .grub a {
+    filter: none;
+}
+
+body.light-mode .grub a:hover {
+    filter: none;
+}
+
+body.light-mode .bikers img, body.light-mode .owner img {
+    filter: drop-shadow(3px 0px 10px rgb(0, 0, 0));
+}
+
+body.light-mode .contact {
+    background-color: #93BEFF;
+}
+
+body.light-mode .contact h2 {
+    color: black;
+}
+
+body.light-mode .contact input[type="submit"]:hover {
+    filter: none;
+}
+
+body.light-mode footer {
+    background-color: #135ECF;
+    color: white;
 }
