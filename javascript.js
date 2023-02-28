@@ -135,4 +135,4 @@ function randomNum() {
 form.addEventListener("submit", isFormValid);
 
 // event listener for random number generator
-document.getElementsByClassName("guessingGame").addEventListener("click", randomNum);
+document.getElementById("submitButton").addEventListener("click", randomNum);
