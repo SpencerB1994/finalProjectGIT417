@@ -15,7 +15,7 @@
     <body>
         <a href="#skip-content" id="skipContent">Skip<br>Content</a>
 
-        <button id="clickme" onclick="toggleImage(); toggleMode();"><img src="images/sunny.png" id="image" alt="activate light and dark mode with these icons" width="75" height="75"></button>
+        <button id="clickme"><img src="images/sunny.png" id="image" alt="activate light and dark mode with these icons" width="75" height="75"></button>
 
         <header>
             <img src="images/lou-pines-full-logo.png" alt="Crecent moon with a cloud in the middle overlapping it reading 'Lou Pine's Beer'." width="350" height="150">
@@ -48,7 +48,7 @@
                 <h2>Want to see if you'll win a discount?</h2>
                 <p>Click on the button to see if you land a discount!</p>
             
-                <form class="guessingGame">
+                <form class="guessingGame" id="guessingGame">
                     <label for="numberInput">Pick a number between 1 and 10.</label>
                     <input type="text" name="numberInput" id="userInput">
                     

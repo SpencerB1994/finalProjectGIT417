@@ -2,6 +2,7 @@
 
 // verify form
 const form = document.getElementById("fullForm");
+const form2 = document.getElementById("guessingGame");
 
 // function to validate the form
 function isFormValid(event) {
@@ -28,10 +29,11 @@ function isFormValid(event) {
     const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
  
     // clear any previous errors
-    errorContainer = "";
+    // errorContainer = "";
     name.classList.remove("error");
     phone.classList.remove("error");
     email.classList.remove("error");
+    preferredMethodInputs.classList.remove("error");
     comments.classList.remove("error");
     
     // check to see if name matches the nameRegex
@@ -41,13 +43,13 @@ function isFormValid(event) {
     }
     
     // check to see if phone matches phoneRegex
-    if (!phoneInput.value.match(phoneRegex)) {
+    if (!phone.value.match(phoneRegex)) {
         errors.push("Invalid phone number.");
         phone.classList.add("error");
     }
 
     // check to confirm there's an email match the regexEmail
-    if (!emailInput.value.match(regexEmail) || emailInput.value === "") {
+    if (!email.value.match(regexEmail) || email.value === "") {
         errors.push("Invalid email address.");
         email.classList.add("error");
     }
@@ -80,17 +82,20 @@ function isFormValid(event) {
     }
 }
 
+// event listener for form
+form.addEventListener("submit", isFormValid);
+
 // reset form
-const resetButton = document.getElementById("reset");
+const resetButton = form.getElementById("submit");
 resetButton.addEventListener("click", () => {
     form.reset();
     errorContainer.innerHTML = "";
-    fullNameInput.classList.remove("error");
-    phoneInput.classList.remove("error");
-    emailInput.classList.remove("error");
+    fullName.classList.remove("error");
+    phone.classList.remove("error");
+    email.classList.remove("error");
     preferredMethodInputs[0].classList.remove("error");
     preferredMethodInputs[1].classList.remove("error");
-    commentsInput.classList.remove("error");
+    comments.classList.remove("error");
 });
 
 function toggleImage() {
@@ -121,18 +126,27 @@ function randomNum() {
     let numInput = document.getElementById("userInput");
     let userInput = Number(numInput.value);
     let output = document.getElementById("message");
+
+    if (randNum = 0 || numInput === null) {
+        output.innerHTML = "Please enter a number between 1 and 10.";
+    }
     
     if (randNum === userInput) {
-      output.innerHTML = "You've won a $7 discount!";
-    } else (randNum !== userInput) {
-      output.innerHTML = "Sorry no discounts for you. Try again!";
+        output.innerHTML = `You've won a $ ${userInput} discount!`;
+    } else {
+        output.innerHTML = `Sorry no discounts for you. Try again!`;
     }
     event.preventDefault();
     output = "";
-  }
-
-// event listener for form
-form.addEventListener("submit", isFormValid);
+}
 
 // event listener for random number generator
-document.getElementById("submitButton").addEventListener("click", randomNum);
+let numGen = document.getElementById("submitButton");
+numGen.addEventListener("click", randomNum);
+
+// event listener for toggling dark and light mode
+let doubleEvent = document.getElementById("clickme");
+doubleEvent.addEventListener("click", () => {
+    toggleImage();
+    toggleMode();
+});
