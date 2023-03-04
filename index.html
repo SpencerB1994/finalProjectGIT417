@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--[if lt IE 9]><script src=”http://html5shim.googlecode.com/svn/trunk/html5.js”></script><![end if]-->
-        <script src="javascript.js" type="text/javascript" async></script>
+        <script src="javascript.js" type="text/javascript" defer></script>
         <title>Lou Pine's Beer</title>
     </head>
 
@@ -50,7 +50,7 @@
             
                 <form class="guessingGame" id="guessingGame">
                     <label for="numberInput">Pick a number between 1 and 10.</label>
-                    <input type="text" name="numberInput" id="userInput">
+                    <input type="text" name="numberInput" id="userInput" required>
                     
                     <div id="message"></div>
                     

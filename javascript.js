@@ -127,11 +127,9 @@ function randomNum() {
     let userInput = Number(numInput.value);
     let output = document.getElementById("message");
 
-    if (randNum = 0 || numInput === null) {
+    if (randNum === 0 || userInput === 0 || userInput === "") {
         output.innerHTML = "Please enter a number between 1 and 10.";
-    }
-    
-    if (randNum === userInput) {
+    } else if (randNum === userInput) {
         output.innerHTML = `You've won a $ ${userInput} discount!`;
     } else {
         output.innerHTML = `Sorry no discounts for you. Try again!`;
@@ -141,8 +139,7 @@ function randomNum() {
 }
 
 // event listener for random number generator
-let numGen = document.getElementById("submitButton");
-numGen.addEventListener("click", randomNum);
+document.getElementById("submitButton").addEventListener("click", randomNum);
 
 // event listener for toggling dark and light mode
 let doubleEvent = document.getElementById("clickme");
