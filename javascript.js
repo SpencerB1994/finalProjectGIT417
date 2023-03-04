@@ -12,7 +12,6 @@ function isFormValid() {
     const name = document.querySelector("#fullName");
     const phone = document.querySelector("#phone");
     const email= document.querySelector("#email");
-    // const preferredMethodInputs = document.getElementsByName("preferredMethod");
     const comments = document.querySelector("#comments");
     const errorList = document.getElementById("errorList");
 
@@ -97,6 +96,8 @@ resetButton.addEventListener("click", () => {
     comments.classList.remove("error");
 });
 
+
+// light/dark mode functions
 function toggleImage() {
     let img = document.getElementById("image");
     
@@ -120,6 +121,7 @@ function toggleMode() {
     }
 }
 
+// discount generator
 function randomNum() {
     let randNum = Math.floor(Math.random() * 10) + 1;
     let numInput = document.getElementById("userInput");
@@ -141,8 +143,10 @@ function randomNum() {
 document.getElementById("submitButton").addEventListener("click", randomNum);
 
 // event listener for toggling dark and light mode
-let doubleEvent = document.getElementById("clickme");
-doubleEvent.addEventListener("click", () => {
-    toggleImage();
-    toggleMode();
-});
+/**
+    let doubleEvent = document.getElementById("clickme");
+    doubleEvent.addEventListener("click", () => {
+        toggleImage();
+        toggleMode();
+    });
+*/

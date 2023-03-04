@@ -715,6 +715,10 @@ body.light-mode .discount #submitButton:hover {
     background-color: #93BEFF;
 }
 
+body.light-mode .contact span, body.light-mode #errorList {
+    color: red;
+}
+
 /* Color of error message for number 'discount' generator */
 #message {
     color: red;
