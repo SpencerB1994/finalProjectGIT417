@@ -2,10 +2,9 @@
 
 // verify form
 const form = document.getElementById("fullForm");
-const form2 = document.getElementById("guessingGame");
 
 // function to validate the form
-function isFormValid(event) {
+function isFormValid() {
 
     // form inputs
     const name = document.querySelector("#fullName");
@@ -29,7 +28,7 @@ function isFormValid(event) {
     const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
  
     // clear any previous errors
-    // errorContainer = "";
+    errorContainer = "";
     name.classList.remove("error");
     phone.classList.remove("error");
     email.classList.remove("error");

@@ -125,7 +125,7 @@ nav ul li a:hover {
     filter: drop-shadow(3px 0px 10px rgb(90, 248, 227));
 }
 
-header > img {
+header a img {
     filter: drop-shadow(3px 0px 15px rgba(90, 164, 248, 0.904));
     grid-column: 1 / 2;
 }
@@ -706,4 +706,9 @@ body.light-mode footer {
 body.light-mode .discount #submitButton:hover {
     filter: none;
     background-color: #93BEFF;
+}
+
+/* Color of error message for number 'discount' generator */
+#message {
+    color: red;
 }
