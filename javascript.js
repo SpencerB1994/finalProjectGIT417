@@ -5,12 +5,14 @@ const form = document.getElementById("fullForm");
 
 // function to validate the form
 function isFormValid() {
+    // prevent default at the beginning
+    event.preventDefault();
 
     // form inputs
     const name = document.querySelector("#fullName");
     const phone = document.querySelector("#phone");
     const email= document.querySelector("#email");
-    const preferredMethodInputs = document.getElementsByName("preferredMethod");
+    // const preferredMethodInputs = document.getElementsByName("preferredMethod");
     const comments = document.querySelector("#comments");
     const errorList = document.getElementById("errorList");
 
@@ -28,12 +30,10 @@ function isFormValid() {
     const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
  
     // clear any previous errors
-    errorContainer = "";
-    name.classList.remove("error");
-    phone.classList.remove("error");
-    email.classList.remove("error");
-    preferredMethodInputs.classList.remove("error");
-    comments.classList.remove("error");
+    name.nextElementSibling.textContent = "";
+    phone.nextElementSibling.textContent = "";
+    email.nextElementSibling.textContent = "";
+    comments.nextElementSibling.textContent = "";
     
     // check to see if name matches the nameRegex
     if (!name.value.match(nameRegex)) {
