@@ -351,6 +351,11 @@ main section img, main section section img {
 }
 
 span {
+    color: gold;
+}
+
+/* Vampire paragraphs */
+p span {
     color: red;
 }
 
@@ -538,26 +543,23 @@ input[type="submit"]:hover {
     border: none;
 }
 
-#errorList {
-    grid-column: 1 / 3;
-    grid-row: 4 / 4;
-}
-
 /* Styling for Errors on form */
 .hide {
 	display: none;
 }
 
 #errorList {
-    color: red;
+    color: gold;
+    grid-column: 1 / 3;
+    grid-row: 4 / 4;
 }
 
 #emailError {
-    color: red;
+    color: gold;
 }
 
 input.error  {
-   border: 2px solid red;
+   border: 2px solid gold;
 }
 
 input[type=text], input[type=email] {
