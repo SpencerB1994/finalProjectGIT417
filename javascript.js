@@ -131,7 +131,7 @@ function randomNum() {
     if (randNum === 0 || userInput === 0 || userInput === "") {
         output.innerHTML = "Please enter a number between 1 and 10.";
     } else if (randNum === userInput) {
-        output.innerHTML = `You've won a $ ${userInput} discount!`;
+        output.innerHTML = `You've won a $${userInput} discount!`;
     } else {
         output.innerHTML = `Sorry no discounts for you. Try again!`;
     }
