@@ -78,13 +78,13 @@ function isFormValid() {
           errorList.appendChild(li);
         });
     }
-}
+};
 
 // event listener for form
-form.addEventListener("submit", isFormValid);
+document.addEventListener("submit", isFormValid);
 
 // reset form
-const resetButton = form.getElementById("submit");
+const resetButton = document.getElementById("submit");
 resetButton.addEventListener("click", () => {
     form.reset();
     errorContainer.innerHTML = "";
@@ -124,7 +124,7 @@ function toggleMode() {
 // discount generator
 function randomNum() {
     let randNum = Math.floor(Math.random() * 10) + 1;
-    let numInput = document.getElementById("userInput");
+    let numInput = document.getElementById("userDisplay");
     let userInput = Number(numInput.value);
     let output = document.getElementById("message");
 
@@ -141,12 +141,3 @@ function randomNum() {
 
 // event listener for random number generator
 document.getElementById("submitButton").addEventListener("click", randomNum);
-
-// event listener for toggling dark and light mode
-/**
-    let doubleEvent = document.getElementById("clickme");
-    doubleEvent.addEventListener("click", () => {
-        toggleImage();
-        toggleMode();
-    });
-*/
