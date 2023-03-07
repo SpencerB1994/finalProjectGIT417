@@ -725,3 +725,276 @@ body.light-mode .contact span, body.light-mode #errorList {
 #message {
     color: red;
 }
+
+@media screen and (min-width: 500px) {
+    /* Mobile Version */
+    #skipContent {
+        align-items: center;
+    }
+
+    header a img {
+        width: 175px;
+        height: 75px;
+    }
+
+    .headerImage {
+        width: 100vw;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+
+    .possie {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .possie h2 {
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+
+    .possie img {
+        width: 300px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .possie p, .possie p ~ p {
+        margin: 0px;
+    }
+
+    .possie p ~ p {
+        margin-top: 20px;
+    }
+
+    /* Discount Generator Section - Mobile Version */
+    .discount {
+        width: 100vw;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .discount h2 {
+        font-size: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    .discount form {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .guessingGame {
+        width: 90vw;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    /* Grub Section - Mobile Version */
+    #grub.grub {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        flex-direction: column;
+    }
+
+    .grub h2 {
+        height: 40px;
+        font-size: 1.5rem;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding-bottom: 0px;
+    }
+
+    #grub h3 {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .grub {
+        display: flex;
+    }
+
+    #grub .section1 {
+        padding: 0px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #grub .section1 img {
+        width: 300px;
+        height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .grub section p {
+        text-align: justify;
+    }
+
+    .grub .section2 {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 30px;
+    }
+
+    #grub .section2 img {
+        width: 300px;
+        height: 350px;
+    }
+
+    #grub .section3 {
+        padding: 0px;
+    }
+
+    #grub .section3 img {
+        width: 300px;
+        height: 320px;
+    }
+
+    .grub a {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    /* Bikers Section */
+    .bikers {
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .bikers h2 {
+        display: flex;
+        margin-top: 0px;
+        justify-content: center;
+    }
+
+    .bikers img {
+        width: 70vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .bikers p {
+        margin-top: 20px;
+        text-align: justify;
+    }
+
+    .bikers p ~ p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    /* Owner Section - Mobile Version */
+    .owner {
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .owner h2 {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .owner h3 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .owner img {
+        width: 70vw;
+    }
+
+    .owner p {
+        margin-top: 30px;
+        margin-bottom: 0px;
+        text-align: justify;
+    }
+
+    /* Contact Us Section - Mobile Version */
+    .contact {
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .contact h2 {
+        margin-bottom: 0px;
+    }
+
+    form#fullForm {
+        margin: 0px;
+    }
+
+    #fullForm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #fullForm label {
+        padding-bottom: 0px;
+    }
+
+    input[id="fullName"], input[id="phone"], input[id="email"], input[id="comments"] {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    label[for="email"] {
+        margin-top: 10px;
+    }
+}
+
+/* Medium Screen Sizes - Tablet Version */
+@media screen and (min-width: 750px) {
+    /* logo */
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    header a img {
+        width: 100%;
+        height: 80%;
+    }
+
+    /* Navigation */
+    nav {
+        position: absolute;
+    }
+
+    /* Light/Dark Mode Icons */
+    img#image {
+        margin-top: 15px;
+    }
+}
