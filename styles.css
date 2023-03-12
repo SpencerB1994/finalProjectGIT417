@@ -97,13 +97,15 @@ p {
 nav ul {
     display: flex;
     justify-content: space-around;
-    padding-top: 40px;
+    padding-top: 50px;
     padding-left: 0px;
+    padding-left: 500px;
 }
 
 nav ul li {
     list-style-type: none;
     font-size: 20px;
+    margin-right: 20px;
 }
 
 nav ul li a {
@@ -648,8 +650,9 @@ body.light-mode {
 }
 
 body.light-mode .headerImage {
-    border: none;
     filter: none;
+    border-top: 2px solid #93BEFF;
+    border-bottom: 2px solid #93BEFF;
 }
 
 body.light-mode header img {
@@ -732,9 +735,39 @@ body.light-mode .contact span, body.light-mode #errorList {
         align-items: center;
     }
 
+    header {
+        display: grid;
+    }
+
+    nav {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        padding-top: 10px;
+    }
+
+    nav ul {
+        padding: 0px;
+    }
+
+    nav ul li {
+        font-size: 0.75rem;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+    }
+
     header a img {
         width: 175px;
         height: 75px;
+    }
+
+    #image {
+        margin-top: 0px;
+        position: absolute;
+        padding-top: 0px;
     }
 
     .headerImage {
