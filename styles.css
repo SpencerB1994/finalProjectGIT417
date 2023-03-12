@@ -659,6 +659,10 @@ body.light-mode header img {
     filter: none;
 }
 
+body.light-mode .active {
+    background-color: var(--dark-mint);
+}
+
 body.light-mode header nav ul li a {
     filter: none;
 }
@@ -762,12 +766,21 @@ body.light-mode .contact span, body.light-mode #errorList {
     header a img {
         width: 175px;
         height: 75px;
+        right: 0;
+    }
+
+    header > a {
+        width: 175px;
     }
 
     #image {
         margin-top: 0px;
         position: absolute;
-        padding-top: 0px;
+    }
+
+    #clickme {
+        right: 0;
+        margin-right: -40px;
     }
 
     .headerImage {
@@ -1006,6 +1019,24 @@ body.light-mode .contact span, body.light-mode #errorList {
     label[for="email"] {
         margin-top: 10px;
     }
+
+    /* Footer - Mobile */
+    footer {
+        display: block;
+        padding: 20px;
+    }
+
+    footer p {
+        margin: 0px;
+    }
+
+    footer .address h4, footer .hours h4 {
+        font-size: 0.75rem;
+    }
+
+    footer .address, footer .hours {
+        margin-top: 40px;
+    }
 }
 
 /* Medium Screen Sizes - Tablet Version */
@@ -1013,7 +1044,7 @@ body.light-mode .contact span, body.light-mode #errorList {
     /* logo */
     header {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 300px 1fr;
     }
 
     header a img {
@@ -1023,11 +1054,70 @@ body.light-mode .contact span, body.light-mode #errorList {
 
     /* Navigation */
     nav {
-        position: absolute;
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+        padding-top: 0px;
+        display: grid;
+    }
+
+    nav ul {
+        margin: 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0px;
+        width: 48vw;
+    }
+
+    nav ul li {
+        margin-left: 0px;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        margin-right: 0px;
+        display: grid;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 
     /* Light/Dark Mode Icons */
     img#image {
-        margin-top: 15px;
+        margin-top: 0px;
+    }
+
+    /* Footer - Tablet sizes */
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    footer small, footer p {
+        grid-column: 1 / 2;
+    }
+
+    footer small {
+        margin-top: 10px;
+    }
+
+    footer p {
+        margin-top: 35px;
+    }
+
+    footer .address {
+        grid-column: 2 / 3;
+        margin-top: 10px;
+    }
+
+    footer .hours {
+        grid-column: 3 / 4;
+        margin-top: 0px;
+    }
+
+    footer .address h4, footer .hours h4 {
+        margin-top: 0px;
     }
 }
